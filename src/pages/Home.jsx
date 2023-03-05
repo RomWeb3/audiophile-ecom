@@ -30,12 +30,12 @@ function Home() {
         </h2>
         <Button1 />
       </div>
-      <div className="w-full bg-white px-6 pt-10 pb-[120px] flex flex-col gap-[68px]">
+      <div className="w-full bg-white px-6 pt-[92px] pb-[120px] flex flex-col gap-[68px]">
         <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
           <img
-            src="/assets/shared/mobile/image-xx99-mark-one-headphones.jpg"
+            src="/assets/shared/tablet/image-xx99-mark-one-headphones-bg.png"
             alt="category headphones"
-            className="absolute top-[-52px] left-0"
+            className="w-[120px] top-[-84px] left-0 right-0 m-auto absolute"
           />
           <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
             Headphones
@@ -44,9 +44,9 @@ function Home() {
         </div>
         <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
           <img
-            src="/assets/shared/mobile/image-zx9-speaker.jpg"
-            alt="category headphones"
-            className="absolute"
+            src="/assets/shared/tablet/image-zx9-speaker-bg.png"
+            alt="category speakers"
+            className="absolute w-[128px] top-[-88px]"
           />
           <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
             Speakers
@@ -56,14 +56,97 @@ function Home() {
         <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
           <img
             src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
-            alt="category headphones"
-            className="absolute top-0"
+            alt="category earphones"
+            className="absolute w-[175px] top-[-44px]"
           />
           <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
             Earphones
           </h3>
           <Button3 />
         </div>
+      </div>
+      <div className="w-full px-6 mb-6">
+        <div
+          className="w-full h-[600px] bg-primary flex flex-col items-center px-6 rounded-lg relative"
+          style={{
+            backgroundImage: "url('/assets/home/desktop/pattern-circles.svg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "171%",
+            backgroundPosition: "center -120px",
+          }}
+        >
+          <img
+            src="/assets/home/mobile/image-speaker-zx9.png"
+            alt="ZX9 Speaker"
+            className="w-[172px] absolute top-[55px]"
+          />
+          <h3 className="font-bold text-5xl text-center tracking-tight uppercase text-white mt-[294px] mb-6">
+            <span>ZX9</span>
+            <br />
+            <span>Speaker</span>
+          </h3>
+          <p className="text-white opacity-75 text-center font-medium text-base mb-6">
+            Upgrade to premium speakers that are phenomenally built to deliver
+            truly remarkable sound.
+          </p>
+          <Button2 bgColor={"bg-black"} textColor={"text-white"} />
+        </div>
+      </div>
+      <div className="w-full px-6 mb-6">
+        <div
+          className="w-full h-[320px] rounded-lg flex flex-col justify-center gap-8 px-6"
+          style={{
+            backgroundImage: "url('/assets/home/mobile/image-speaker-zx7.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+          }}
+        >
+          <h3 className="font-bold text-3xl tracking-wider uppercase text-black">
+            ZX7 Speaker
+          </h3>
+          <Button2 bgColor={"bg-transparent"} textColor={"text-black"} />
+        </div>
+      </div>
+      <div className="w-full px-6 mb-6">
+        <div
+          className="w-full h-[200px] rounded-lg flex flex-col justify-center gap-8 px-6"
+          style={{
+            backgroundImage:
+              "url('/assets/home/mobile/image-earphones-yx1.jpg')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center center",
+          }}
+        ></div>
+      </div>
+      <div className="w-full px-6 mb-[120px]">
+        <div className="w-full h-[200px] bg-lightgray rounded-lg flex flex-col justify-center gap-8 px-6">
+          <h3 className="font-bold text-3xl tracking-wider uppercase text-black">
+            YX1 Earphones
+          </h3>
+          <Button2 bgColor={"bg-transparent"} textColor={"text-black"} />
+        </div>
+      </div>
+      <div className="w-full px-6 mb-[120px]">
+        <div className="w-full h-[300px] rounded-lg mb-10">
+          <img
+            src="/assets/shared/mobile/image-best-gear.jpg"
+            alt="image best gear"
+            className="rounded-lg"
+          />
+        </div>
+        <h3 className="text-3xl font-bold text-black tracking-tightest text-center uppercase mb-8">
+          Bringing you the <span className="text-primary">best</span> audio gear
+        </h3>
+        <p className="font-medium text-base text-center text-black opacity-50">
+          Located at the heart of New York City, Audiophile is the premier store
+          for high end headphones, earphones, speakers, and audio accessories.
+          We have a large showroom and luxury demonstration rooms available for
+          you to browse and experience a wide range of our products. Stop by our
+          store to meet some of the fantastic people who make Audiophile the
+          best place to buy your portable audio equipment.
+        </p>
       </div>
       <Footer />
     </div>
