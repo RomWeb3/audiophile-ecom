@@ -1,16 +1,20 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Button1 from "../layouts/buttons/Button1";
 import Button2 from "../layouts/buttons/Button2";
 import Button3 from "../layouts/buttons/Button3";
+import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 
 function Home() {
+  const navigate = useNavigate();
+
   return (
     <div>
       <Header />
       <div
-        className="w-full h-[510px] px-6 flex flex-col justify-center items-center bg-red-600"
+        className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
         style={{
           backgroundImage: "url('/assets/home/mobile/image-header.jpg')",
           backgroundRepeat: "no-repeat",
@@ -30,42 +34,8 @@ function Home() {
         </h2>
         <Button1 />
       </div>
-      <div className="w-full bg-white px-6 pt-[92px] pb-[120px] flex flex-col gap-[68px]">
-        <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
-          <img
-            src="/assets/shared/tablet/image-xx99-mark-one-headphones-bg.png"
-            alt="category headphones"
-            className="w-[120px] top-[-84px] left-0 right-0 m-auto absolute"
-          />
-          <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
-            Headphones
-          </h3>
-          <Button3 />
-        </div>
-        <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
-          <img
-            src="/assets/shared/tablet/image-zx9-speaker-bg.png"
-            alt="category speakers"
-            className="absolute w-[128px] top-[-88px]"
-          />
-          <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
-            Speakers
-          </h3>
-          <Button3 />
-        </div>
-        <div className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative">
-          <img
-            src="/assets/shared/desktop/image-category-thumbnail-earphones.png"
-            alt="category earphones"
-            className="absolute w-[175px] top-[-44px]"
-          />
-          <h3 className="pt-[88px] font-bold text-base text-center tracking-tightest uppercase text-black leading-5 mb-4">
-            Earphones
-          </h3>
-          <Button3 />
-        </div>
-      </div>
-      <div className="w-full px-6 mb-6">
+      <Categories />
+      <div className="w-full px-6 mb-6 pt-[120px]">
         <div
           className="w-full h-[600px] bg-primary flex flex-col items-center px-6 rounded-lg relative"
           style={{
