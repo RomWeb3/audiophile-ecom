@@ -1,8 +1,5 @@
 import Header from "../components/Header";
 import CategoryHeader from "../components/CategoryHeader";
-import Button1 from "../layouts/buttons/Button1";
-import Button2 from "../layouts/buttons/Button2";
-import Button3 from "../layouts/buttons/Button3";
 import ProductCard from "../components/ProductCard";
 import Categories from "../components/Categories";
 import AboutUs from "../components/AboutUs";
@@ -23,18 +20,21 @@ function Headphones() {
       <div className="flex flex-col gap-[120px] mt-16">
         <ProductCard
           title="XX99 Mark II"
+          category="Headphones"
           description={description}
           image="product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg"
           newProduct={true}
         />
         <ProductCard
           title="XX99 Mark I"
+          category="Headphones"
           description={description2}
           image="product-xx99-mark-one-headphones/mobile/image-category-page-preview.jpg"
           newProduct={false}
         />
         <ProductCard
           title="XX59"
+          category="Headphones"
           description={description3}
           image="product-xx59-headphones/mobile/image-category-page-preview.jpg"
           newProduct={false}

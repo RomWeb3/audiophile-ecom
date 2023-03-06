@@ -1,6 +1,6 @@
 import Button1 from "../layouts/buttons/Button1";
 
-function ProductCard({ title, description, image, newProduct }) {
+function ProductCard({ title, category, description, image, newProduct }) {
   return (
     <div className="w-full px-6 flex flex-col items-center">
       <div
@@ -20,7 +20,7 @@ function ProductCard({ title, description, image, newProduct }) {
       <h2 className="font-bold text-3xl text-center tracking-tightest uppercase text-black mb-6">
         <span>{title}</span>
         <br />
-        <span>Headphones</span>
+        <span>{category}</span>
       </h2>
       <p className="font-medium text-base text-center text-black opacity-50 mb-6">
         {description}
