@@ -33,7 +33,7 @@ function Home() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </h2>
-        <Button1 />
+        <Button1 text="See Product" />
       </div>
       <Categories />
       <div className="w-full px-6 mb-6 pt-[120px]">
