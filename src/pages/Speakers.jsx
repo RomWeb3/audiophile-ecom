@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import CategoryHeader from "../components/CategoryHeader";
 import CategoryCard from "../components/CategoryCard";
@@ -6,6 +7,7 @@ import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 
 function Speakers({ products }) {
+  const navigate = useNavigate();
   const filteredProducts = products
     .filter((product) => product.category === "speakers")
     .sort((a, b) => b.new - a.new);
@@ -23,6 +25,7 @@ function Speakers({ products }) {
             description={product.description}
             image={product.categoryImage.mobile}
             newProduct={product.new}
+            onClick={() => navigate(`/speakers/${product.id}`)}
           />
         ))}
         <Categories />

@@ -1,21 +1,35 @@
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Footer() {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-secondary px-6 pt-[52px] pb-[38px] flex flex-col justify-center items-center gap-12 relative">
       <div className="w-[101px] h-1 bg-primary absolute top-0"></div>
       <img src="/assets/shared/desktop/logo.svg" alt="logo" />
       <ul className="flex flex-col justify-center gap-4">
-        <li className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer">
+        <li
+          className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer"
+          onClick={() => navigate("/")}
+        >
           Home
         </li>
-        <li className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer">
+        <li
+          className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer"
+          onClick={() => navigate("/headphones")}
+        >
           Headphones
         </li>
-        <li className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer">
+        <li
+          className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer"
+          onClick={() => navigate("/speakers")}
+        >
           Speakers
         </li>
-        <li className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer">
+        <li
+          className="text-xs font-bold text-white tracking-wider uppercase text-center cursor-pointer"
+          onClick={() => navigate("/earphones")}
+        >
           Earphones
         </li>
       </ul>

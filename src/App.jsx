@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     const localData = localStorage.getItem("produts");
     if (localData && !Array.isArray(JSON.parse(localData))) {
-      setDatas(JSON.parse(localData));
+      setProducts(JSON.parse(localData));
     } else {
       fetch("/data/data.json")
         .then((res) => res.json())
@@ -28,14 +28,20 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="headphones" element={<Headphones products={products} />} />
         <Route
-          path="/headphones"
-          element={<Headphones products={products} />}
+          path="headphones/:id"
+          element={<ProductDetail products={products} />}
         />
-        <Route path="/speakers" element={<Speakers products={products} />} />
-        <Route path="/earphones" element={<Earphones products={products} />} />
+        <Route path="speakers" element={<Speakers products={products} />} />
         <Route
-          path="/headphones/:id"
+          path="speakers/:id"
+          element={<ProductDetail products={products} />}
+        />
+
+        <Route path="earphones" element={<Earphones products={products} />} />
+        <Route
+          path="earphones/:id"
           element={<ProductDetail products={products} />}
         />
       </Routes>

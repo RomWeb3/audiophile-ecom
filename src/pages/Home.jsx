@@ -1,27 +1,28 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Button1 from "../layouts/buttons/Button1";
 import Button2 from "../layouts/buttons/Button2";
-import Button3 from "../layouts/buttons/Button3";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
 
 function Home() {
   const navigate = useNavigate();
+  const style = (url, position) => {
+    return {
+      backgroundImage: `url('${url}')`,
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+      backgroundPosition: position,
+    };
+  };
 
   return (
     <div>
       <Header />
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
-        style={{
-          backgroundImage: "url('/assets/home/mobile/image-header.jpg')",
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          backgroundPosition: "center 100%",
-        }}
+        style={style("/assets/home/mobile/image-header.jpg", "center 100%")}
       >
         <p className="text-sm text-white opacity-50 tracking-widest uppercase text-center mb-4">
           New Product
@@ -33,18 +34,16 @@ function Home() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </h2>
-        <Button1 text="See Product" />
+        <Button1 text="See Product" onClick={() => navigate("/headphones/4")} />
       </div>
       <Categories />
       <div className="w-full px-6 mb-6 pt-[120px]">
         <div
           className="w-full h-[600px] bg-primary flex flex-col items-center px-6 rounded-lg relative"
-          style={{
-            backgroundImage: "url('/assets/home/desktop/pattern-circles.svg')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "171%",
-            backgroundPosition: "center -120px",
-          }}
+          style={style(
+            "/assets/home/desktop/pattern-circles.svg",
+            "center -120px"
+          )}
         >
           <img
             src="/assets/home/mobile/image-speaker-zx9.png"
@@ -60,35 +59,32 @@ function Home() {
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Button2 bgColor={"bg-black"} textColor={"text-white"} />
+          <Button2
+            bgColor={"bg-black"}
+            textColor={"text-white"}
+            onClick={() => navigate("/speakers/6")}
+          />
         </div>
       </div>
       <div className="w-full px-6 mb-6">
         <div
           className="w-full h-[320px] rounded-lg flex flex-col justify-center gap-8 px-6"
-          style={{
-            backgroundImage: "url('/assets/home/mobile/image-speaker-zx7.jpg')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-          }}
+          style={style("/assets/home/mobile/image-speaker-zx7.jpg", "center")}
         >
           <h3 className="font-bold text-3xl tracking-wider uppercase text-black">
             ZX7 Speaker
           </h3>
-          <Button2 bgColor={"bg-transparent"} textColor={"text-black"} />
+          <Button2
+            bgColor={"bg-transparent"}
+            textColor={"text-black"}
+            onClick={() => navigate("/speakers/5")}
+          />
         </div>
       </div>
       <div className="w-full px-6 mb-6">
         <div
           className="w-full h-[200px] rounded-lg flex flex-col justify-center gap-8 px-6"
-          style={{
-            backgroundImage:
-              "url('/assets/home/mobile/image-earphones-yx1.jpg')",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center center",
-          }}
+          style={style("/assets/home/mobile/image-earphones-yx1.jpg", "center")}
         ></div>
       </div>
       <div className="w-full px-6 mb-[120px]">
@@ -96,7 +92,11 @@ function Home() {
           <h3 className="font-bold text-3xl tracking-wider uppercase text-black">
             YX1 Earphones
           </h3>
-          <Button2 bgColor={"bg-transparent"} textColor={"text-black"} />
+          <Button2
+            bgColor={"bg-transparent"}
+            textColor={"text-black"}
+            onClick={() => navigate("/earphones/1")}
+          />
         </div>
       </div>
       <div className="mb-[120px]">
