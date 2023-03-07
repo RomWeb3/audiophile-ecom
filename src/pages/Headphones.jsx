@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import CategoryHeader from "../components/CategoryHeader";
@@ -7,14 +8,19 @@ import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 
 function Headphones({ products }) {
+  const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
   const filteredProducts = products
     .filter((product) => product.category === "headphones")
     .sort((a, b) => b.new - a.new);
 
   return (
-    <div>
-      <Header />
+    <div className="relative">
+      <Header
+        onCart={() => setShowCart(!showCart)}
+        showCart={showCart}
+        setShowCart={setShowCart}
+      />
       <CategoryHeader category="Headphones" />
       <div className="flex flex-col gap-[120px] mt-16">
         {filteredProducts.map((product) => (

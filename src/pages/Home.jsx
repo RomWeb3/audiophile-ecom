@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
-import CartModal from "../components/CartModal";
 import Button1 from "../layouts/buttons/Button1";
 import Button2 from "../layouts/buttons/Button2";
 import Categories from "../components/Categories";
@@ -24,10 +22,11 @@ function Home() {
 
   return (
     <div className="relative">
-      <Header onCart={() => setShowCart(!showCart)} />
-      <AnimatePresence>
-        {showCart && <CartModal setShowCart={setShowCart} />}
-      </AnimatePresence>
+      <Header
+        onCart={() => setShowCart(!showCart)}
+        showCart={showCart}
+        setShowCart={setShowCart}
+      />
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
         style={style("/assets/home/mobile/image-header.jpg", "center 100%")}
