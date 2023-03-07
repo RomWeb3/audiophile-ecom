@@ -8,7 +8,6 @@ import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 
 function Headphones({ products }) {
-  const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
   const filteredProducts = products
     .filter((product) => product.category === "headphones")
@@ -16,11 +15,7 @@ function Headphones({ products }) {
 
   return (
     <div className="relative">
-      <Header
-        onCart={() => setShowCart(!showCart)}
-        showCart={showCart}
-        setShowCart={setShowCart}
-      />
+      <Header />
       <CategoryHeader category="Headphones" />
       <div className="flex flex-col gap-[120px] mt-16">
         {filteredProducts.map((product) => (

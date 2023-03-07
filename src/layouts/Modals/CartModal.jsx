@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Counter from "../layouts/Counter";
+import Counter from "../Counter";
 
 function CartModal({ setShowCart }) {
   const closeModal = (e) => {
@@ -39,28 +39,58 @@ function CartModal({ setShowCart }) {
           </div>
           <div className="mt-8 flex flex-col gap-6 overflow-auto max-h-[240px]">
             <div className="flex justify-between items-center">
-              <img
-                src="/assets/cart/image-xx99-mark-two-headphones.jpg"
-                alt="mark two headphones"
-                className="w-[64px] h-[64px] object-cover rounded-lg"
-              />
-              <Counter />
+              <div className="flex items-center gap-4">
+                <img
+                  src="/assets/cart/image-xx99-mark-two-headphones.jpg"
+                  alt="mark two headphones"
+                  className="w-[64px] h-[64px] object-cover rounded-lg"
+                />
+                <div className="flex flex-col">
+                  <span className="font-bold text-base uppercase">
+                    XX99 MKII
+                  </span>
+                  <span className="font-medium text-base opacity-50 uppercase">
+                    $2,999
+                  </span>
+                </div>
+              </div>
+              <Counter addCSS="w-[96px] h-8" />
             </div>
             <div className="flex justify-between items-center">
-              <img
-                src="/assets/cart/image-xx99-mark-two-headphones.jpg"
-                alt="mark two headphones"
-                className="w-[64px] h-[64px] object-cover rounded-lg"
-              />
-              <Counter />
+              <div className="flex items-center gap-4">
+                <img
+                  src="/assets/cart/image-xx99-mark-two-headphones.jpg"
+                  alt="mark two headphones"
+                  className="w-[64px] h-[64px] object-cover rounded-lg"
+                />
+                <div className="flex flex-col">
+                  <span className="font-bold text-base uppercase">
+                    XX99 MKII
+                  </span>
+                  <span className="font-medium text-base opacity-50 uppercase">
+                    $2,999
+                  </span>
+                </div>
+              </div>
+              <Counter addCSS="w-[96px] h-8" />
             </div>
             <div className="flex justify-between items-center">
-              <img
-                src="/assets/cart/image-xx99-mark-two-headphones.jpg"
-                alt="mark two headphones"
-                className="w-[64px] h-[64px] object-cover rounded-lg"
-              />
-              <Counter />
+              <div className="flex items-center gap-4">
+                <img
+                  src="/assets/cart/image-xx99-mark-two-headphones.jpg"
+                  alt="mark two headphones"
+                  className="w-[64px] h-[64px] object-cover rounded-lg"
+                />
+                <div className="flex flex-col">
+                  <span className="font-bold text-base uppercase">
+                    XX99 MKII
+                  </span>
+                  <span className="font-medium text-base opacity-50 uppercase">
+                    $2,999
+                  </span>
+                </div>
+              </div>
+              <Counter addCSS="w-[96px] h-8" />
             </div>
           </div>
         </div>

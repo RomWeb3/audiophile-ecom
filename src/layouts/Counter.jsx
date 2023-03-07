@@ -1,8 +1,8 @@
-import { useState } from "react";
-
-function Counter({ count, setCount }) {
+function Counter({ count, setCount, addCSS }) {
   return (
-    <div className="w-[120px] h-12 bg-verylightgray px-4 flex items-center justify-between">
+    <div
+      className={`w-[120px] h-12 bg-verylightgray px-4 flex items-center justify-between ${addCSS}`}
+    >
       <svg
         width="5"
         height="2"

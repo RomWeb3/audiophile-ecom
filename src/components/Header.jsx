@@ -1,9 +1,31 @@
+import { useEffect, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import CartModal from "./CartModal";
+import CartModal from "../layouts/Modals/CartModal";
+import MenuModal from "../layouts/Modals/MenuModal";
 
-function Header({ onMenu, onCart, showCart, setShowCart }) {
+function Header() {
+  const [showMenu, setShowMenu] = useState(false);
+  const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
+
+  const switchModals = (modal) => {
+    if (modal === "menu") {
+      if (showCart) {
+        setShowCart(false);
+        setShowMenu(true);
+      } else {
+        setShowMenu(!showMenu);
+      }
+    } else if (modal === "cart") {
+      if (showMenu) {
+        setShowMenu(false);
+        setShowCart(true);
+      } else {
+        setShowCart(!showCart);
+      }
+    }
+  };
 
   return (
     <>
@@ -11,7 +33,7 @@ function Header({ onMenu, onCart, showCart, setShowCart }) {
         <img
           src="/assets/shared/tablet/icon-hamburger.svg"
           alt="icon-menu"
-          onClick={onMenu}
+          onClick={() => switchModals("menu")}
         />
         <img
           src="/assets/shared/desktop/logo.svg"
@@ -21,11 +43,14 @@ function Header({ onMenu, onCart, showCart, setShowCart }) {
         <img
           src="/assets/shared/desktop/icon-cart.svg"
           alt="icon-cart"
-          onClick={onCart}
+          onClick={() => switchModals("cart")}
         />
       </div>
       <AnimatePresence>
         {showCart && <CartModal setShowCart={setShowCart} />}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showMenu && <MenuModal setShowMenu={setShowMenu} />}
       </AnimatePresence>
     </>
   );
