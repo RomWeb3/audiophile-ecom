@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
+import CartModal from "../components/CartModal";
 import Button1 from "../layouts/buttons/Button1";
 import Button2 from "../layouts/buttons/Button2";
 import Categories from "../components/Categories";
@@ -7,7 +10,9 @@ import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
 
 function Home() {
+  const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
+
   const style = (url, position) => {
     return {
       backgroundImage: `url('${url}')`,
@@ -18,8 +23,11 @@ function Home() {
   };
 
   return (
-    <div>
-      <Header />
+    <div className="relative">
+      <Header onCart={() => setShowCart(!showCart)} />
+      <AnimatePresence>
+        {showCart && <CartModal setShowCart={setShowCart} />}
+      </AnimatePresence>
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
         style={style("/assets/home/mobile/image-header.jpg", "center 100%")}
