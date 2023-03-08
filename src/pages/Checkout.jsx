@@ -73,7 +73,49 @@ function Checkout() {
           <h2 className="font-bold text-lg tracking-tight uppercase text-black mb-8">
             Summary
           </h2>
-          <button className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-6">
+          <div className="flex justify-between items-center mb-8">
+            <div className="flex items-center gap-4">
+              <img
+                src="/assets/cart/image-xx99-mark-two-headphones.jpg"
+                alt="mark two headphones"
+                className="w-[64px] h-[64px] object-cover rounded-lg"
+              />
+              <div className="flex flex-col">
+                <span className="font-bold text-base uppercase">XX99 MKII</span>
+                <span className="font-medium text-base opacity-50 uppercase">
+                  $2,999
+                </span>
+              </div>
+            </div>
+            <span className="font-bold text-base opacity-50">x1</span>
+          </div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="font-medium text-base opacity-50 uppercase">
+              Total
+            </span>
+            <span className="font-bold text-lg uppercase">$5396</span>
+          </div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="font-medium text-base opacity-50 uppercase">
+              Shipping
+            </span>
+            <span className="font-bold text-lg uppercase">$50</span>
+          </div>
+          <div className="flex items-center justify-between mb-6">
+            <span className="font-medium text-base opacity-50 uppercase">
+              VAT (INCLUDED)
+            </span>
+            <span className="font-bold text-lg uppercase">$1079</span>
+          </div>
+          <div className="flex items-center justify-between mb-2">
+            <span className="font-medium text-base opacity-50 uppercase">
+              Grand Total
+            </span>
+            <span className="font-bold text-lg uppercase text-primary">
+              $5446
+            </span>
+          </div>
+          <button className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-8">
             Continue & Pay
           </button>
         </div>
