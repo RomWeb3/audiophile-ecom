@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import Counter from "../Counter";
+import Counter from "../Form Elements/Counter";
 
 function CartModal({ setShowCart }) {
   const closeModal = (e) => {

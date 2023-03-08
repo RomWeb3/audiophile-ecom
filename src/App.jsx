@@ -7,6 +7,7 @@ import Headphones from "./pages/Headphones";
 import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import ProductDetail from "./pages/ProductDetail";
+import Checkout from "./pages/Checkout";
 
 function App() {
   const [products, setProducts] = useLocalStorage("products", []);
@@ -44,6 +45,7 @@ function App() {
           path="earphones/:id"
           element={<ProductDetail products={products} />}
         />
+        <Route path="checkout" element={<Checkout products={products} />} />
       </Routes>
     </div>
   );
