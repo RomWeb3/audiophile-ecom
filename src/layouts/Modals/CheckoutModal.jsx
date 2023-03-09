@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function CheckoutModal({ cart }) {
+function CheckoutModal({ cart, setCart }) {
   const navigate = useNavigate();
 
   const totalPrice = cart.reduce((acc, item) => {
@@ -91,7 +91,10 @@ function CheckoutModal({ cart }) {
           </div>
           <button
             className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-6"
-            onClick={() => navigate("/")}
+            onClick={() => {
+              navigate("/");
+              setCart([]);
+            }}
           >
             Back to Home
           </button>

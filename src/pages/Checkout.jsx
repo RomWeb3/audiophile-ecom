@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import FormInput from "../layouts/Form Elements/FormInput";
@@ -8,16 +8,91 @@ import CheckoutModal from "../layouts/Modals/CheckoutModal";
 
 function Checkout({ cart, setCart }) {
   const navigate = useNavigate();
-  const [selectedOption, setSelectedOption] = useState("");
+  const [selectedOption, setSelectedOption] = useState("cash");
   const [purchased, setPurchased] = useState(false);
+  const [btnClicked, setBtnClicked] = useState(false);
+  const [error, setError] = useState(false);
+  const [errMail, setErrMail] = useState(false);
+  const [errPhone, setErrPhone] = useState(false);
+  const [errAddress, setErrAddress] = useState(false);
+  const [errZip, setErrZip] = useState(false);
+  const [errCity, setErrCity] = useState(false);
+  const [errCountry, setErrCountry] = useState(false);
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [zip, setZip] = useState("");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
 
   const totalPrice = cart.reduce((acc, item) => {
     return acc + item.price * item.quantity;
   }, 0);
 
+  const validateInput = (input, regex) => regex.test(input);
+
+  const regex = {
+    fullName: /^[a-zA-Z]{2,30}\s[a-zA-Z]{2,30}$/,
+    email: /^[\w-.]+@([\w-]+\.)+[\w-]{2,}$/,
+    phone: /^(?:[0-9] ?){6,14}[0-9]$/,
+    address: /^[a-zA-Z0-9\s-\#.]+$/,
+    zip: /^[0-9]{5}(?:-[0-9]{4})?$/,
+    city: /^[a-zA-Z\s]+$/,
+  };
+
+  const handlePurchase = () => {
+    setBtnClicked(true);
+    if (
+      validateInput(fullName, regex.fullName) &&
+      validateInput(email, regex.email) &&
+      validateInput(phone, regex.phone) &&
+      validateInput(address, regex.address) &&
+      validateInput(zip, regex.zip) &&
+      validateInput(city, regex.city) &&
+      validateInput(country, regex.city)
+    ) {
+      window.scrollTo(0, 0);
+      setPurchased(true);
+    }
+    return;
+  };
+
+  useEffect(() => {
+    validateInput(fullName, regex.fullName) ? setError(false) : setError(true);
+  }, [fullName]);
+
+  useEffect(() => {
+    validateInput(email, regex.email) ? setErrMail(false) : setErrMail(true);
+  }, [email]);
+
+  useEffect(() => {
+    validateInput(phone, regex.phone) ? setErrPhone(false) : setErrPhone(true);
+  }, [phone]);
+
+  useEffect(() => {
+    validateInput(address, regex.address)
+      ? setErrAddress(false)
+      : setErrAddress(true);
+  }, [address]);
+
+  useEffect(() => {
+    validateInput(zip, regex.zip) ? setErrZip(false) : setErrZip(true);
+  }, [zip]);
+
+  useEffect(() => {
+    validateInput(city, regex.city) ? setErrCity(false) : setErrCity(true);
+  }, [city]);
+
+  useEffect(() => {
+    validateInput(country, regex.city)
+      ? setErrCountry(false)
+      : setErrCountry(true);
+  }, [country]);
+
   return (
     <div className="relative">
-      {purchased && <CheckoutModal cart={cart} />}
+      {purchased && <CheckoutModal cart={cart} setCart={setCart} />}
       <Header cart={cart} setCart={setCart} />
       <div className="w-full h-full pt-6 px-6 bg-verylightgray">
         <p
@@ -39,17 +114,73 @@ function Checkout({ cart, setCart }) {
           <h3 className="text-primary font-bold text-xs tracking-tightest uppercase mb-4">
             Billing details
           </h3>
-          <FormInput label="Name" type="text" />
-          <FormInput label="Email Adrress" type="email" />
-          <FormInput label="Phone Number" type="text" />
+          <FormInput
+            label="Name"
+            type="text"
+            id="name"
+            btnClicked={btnClicked}
+            error={error}
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+          />
+          <FormInput
+            label="Email Adrress"
+            type="email"
+            id="email"
+            btnClicked={btnClicked}
+            error={errMail}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FormInput
+            label="Phone Number"
+            type="text"
+            id="phone"
+            btnClicked={btnClicked}
+            error={errPhone}
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+          />
 
           <h3 className="text-primary font-bold text-xs tracking-tightest uppercase mb-4">
             shipping info
           </h3>
-          <FormInput label="Your Adrress" type="text" />
-          <FormInput label="ZIP Code" type="text" />
-          <FormInput label="City" type="text" />
-          <FormInput label="Country" type="text" />
+          <FormInput
+            label="Your Adrress"
+            type="text"
+            id="address"
+            btnClicked={btnClicked}
+            error={errAddress}
+            value={address}
+            onChange={(e) => setAddress(e.target.value)}
+          />
+          <FormInput
+            label="ZIP Code"
+            type="text"
+            id="zip"
+            btnClicked={btnClicked}
+            error={errZip}
+            value={zip}
+            onChange={(e) => setZip(e.target.value)}
+          />
+          <FormInput
+            label="City"
+            type="text"
+            id="city"
+            btnClicked={btnClicked}
+            error={errCity}
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+          <FormInput
+            label="Country"
+            type="text"
+            id="country"
+            btnClicked={btnClicked}
+            error={errCountry}
+            value={country}
+            onChange={(e) => setCountry(e.target.value)}
+          />
           <h3 className="text-primary font-bold text-xs tracking-tightest uppercase mb-4">
             payment details
           </h3>
@@ -70,8 +201,12 @@ function Checkout({ cart, setCart }) {
           </div>
           {selectedOption === "eMoney" && (
             <>
-              <FormInput label="e-Money Number" type="number" />
-              <FormInput label="e-Money PIN" type="number" />
+              <FormInput
+                label="e-Money Number"
+                type="text"
+                id="e-money-number"
+              />
+              <FormInput label="e-Money PIN" type="text" id="e-money-pin" />
             </>
           )}
         </div>
@@ -157,10 +292,7 @@ function Checkout({ cart, setCart }) {
           </div>
           <button
             className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-8"
-            onClick={() => {
-              window.scrollTo(0, 0);
-              setPurchased(true);
-            }}
+            onClick={() => handlePurchase()}
           >
             Continue & Pay
           </button>
