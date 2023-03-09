@@ -39,8 +39,7 @@ function App() {
             <ProductDetail products={products} cart={cart} setCart={setCart} />
           }
         />
-
-        <Route path="checkout" element={<Checkout products={products} />} />
+        <Route path="checkout" element={<Checkout cart={cart} />} />
       </Routes>
     </div>
   );

@@ -108,7 +108,9 @@ function CartModal({ setShowCart, cart, setCart }) {
             </div>
             <button
               className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white"
-              onClick={() => navigate("/checkout")}
+              onClick={() => {
+                cart.length > 0 && navigate("/checkout");
+              }}
             >
               Checkout
             </button>

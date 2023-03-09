@@ -4,13 +4,20 @@ import Header from "../components/Header";
 import FormInput from "../layouts/Form Elements/FormInput";
 import InputRadio from "../layouts/Form Elements/InputRadio";
 import Footer from "../components/Footer";
+import CheckoutModal from "../layouts/Modals/CheckoutModal";
 
-function Checkout() {
+function Checkout({ cart }) {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
+  const [purchased, setPurchased] = useState(false);
+
+  const totalPrice = cart.reduce((acc, item) => {
+    return acc + item.price * item.quantity;
+  }, 0);
 
   return (
     <div className="relative">
+      {purchased && <CheckoutModal cart={cart} />}
       <Header />
       <div className="w-full h-full pt-6 px-6 bg-verylightgray">
         <p
@@ -70,30 +77,55 @@ function Checkout() {
         </div>
 
         <div className="w-full bg-white rounded-lg px-6 py-8 mt-8">
-          <h2 className="font-bold text-lg tracking-tight uppercase text-black mb-8">
+          <h2 className="font-bold text-lg tracking-tight uppercase text-black mb-[7px]">
             Summary
           </h2>
-          <div className="flex justify-between items-center mb-8">
-            <div className="flex items-center gap-4">
-              <img
-                src="/assets/cart/image-xx99-mark-two-headphones.jpg"
-                alt="mark two headphones"
-                className="w-[64px] h-[64px] object-cover rounded-lg"
-              />
-              <div className="flex flex-col">
-                <span className="font-bold text-base uppercase">XX99 MKII</span>
-                <span className="font-medium text-base opacity-50 uppercase">
-                  $2,999
-                </span>
+          <div className="overflow-auto">
+            {cart.map((item) => (
+              <div key={item.id} className="mt-6 flex flex-col max-h-[240px]">
+                <div className="flex justify-between items-center">
+                  <div className="flex items-center gap-4">
+                    <img
+                      src={`/assets/cart/image${item.image.mobile
+                        .replace("/assets/product", "")
+                        .replace("/mobile/image-product.jpg", "")}.jpg`}
+                      alt="mark two headphones"
+                      className="w-[64px] h-[64px] object-cover rounded-lg"
+                    />
+                    <div className="flex flex-col">
+                      <span className="font-bold text-base uppercase">
+                        {item.name
+                          .replace("Headphones", "")
+                          .replace("Speaker", "")
+                          .replace("Earphones", "")
+                          .replace("Wireless", "")
+                          .replace("Mark", "MK")}
+                      </span>
+                      <span className="font-medium text-base opacity-50 uppercase">
+                        {item.price.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })}
+                      </span>
+                    </div>
+                  </div>
+                  <span className="font-bold text-base opacity-50">
+                    x{item.quantity}
+                  </span>
+                </div>
               </div>
-            </div>
-            <span className="font-bold text-base opacity-50">x1</span>
+            ))}
           </div>
-          <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center justify-between mt-[31px] mb-2">
             <span className="font-medium text-base opacity-50 uppercase">
               Total
             </span>
-            <span className="font-bold text-lg uppercase">$5396</span>
+            <span className="font-bold text-lg uppercase">
+              {totalPrice.toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}
+            </span>
           </div>
           <div className="flex items-center justify-between mb-2">
             <span className="font-medium text-base opacity-50 uppercase">
@@ -105,17 +137,31 @@ function Checkout() {
             <span className="font-medium text-base opacity-50 uppercase">
               VAT (INCLUDED)
             </span>
-            <span className="font-bold text-lg uppercase">$1079</span>
+            <span className="font-bold text-lg uppercase">
+              {(totalPrice * 0.2).toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}
+            </span>
           </div>
           <div className="flex items-center justify-between mb-2">
             <span className="font-medium text-base opacity-50 uppercase">
               Grand Total
             </span>
             <span className="font-bold text-lg uppercase text-primary">
-              $5446
+              {(totalPrice + 50).toLocaleString("en-US", {
+                style: "currency",
+                currency: "USD",
+              })}
             </span>
           </div>
-          <button className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-8">
+          <button
+            className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white mt-8"
+            onClick={() => {
+              window.scrollTo(0, 0);
+              setPurchased(true);
+            }}
+          >
             Continue & Pay
           </button>
         </div>

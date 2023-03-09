@@ -2,23 +2,8 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-function CheckoutModal({ setShowCart }) {
+function CheckoutModal({ cart }) {
   const navigate = useNavigate();
-  const closeModal = (e) => {
-    if (e.target === e.currentTarget) {
-      setShowCart(false);
-    }
-  };
-
-  useEffect(() => {
-    const close = (e) => {
-      if (e.key === "Escape") {
-        setShowCart(false);
-      }
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, []);
 
   return (
     <motion.div
@@ -26,7 +11,6 @@ function CheckoutModal({ setShowCart }) {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       className="w-full h-full fixed bg-black/40 flex flex-col justify-center items-center z-50"
-      onClick={closeModal}
     >
       <div className="p-8 w-[87%] max-w-[540px] bg-white rounded-lg flex flex-col gap-8">
         <div>

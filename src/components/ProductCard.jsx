@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button1 from "../layouts/buttons/Button1";
 import Counter from "../layouts/Form Elements/Counter";

@@ -6,7 +6,6 @@ import Button2 from "../layouts/buttons/Button2";
 import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
-import CheckoutModal from "../layouts/Modals/CheckoutModal";
 
 function Home() {
   const navigate = useNavigate();
@@ -22,7 +21,6 @@ function Home() {
 
   return (
     <div className="relative">
-      {/* <CheckoutModal /> */}
       <Header />
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
