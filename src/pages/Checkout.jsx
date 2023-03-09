@@ -89,7 +89,7 @@ function Checkout({ cart }) {
                       src={`/assets/cart/image${item.image.mobile
                         .replace("/assets/product", "")
                         .replace("/mobile/image-product.jpg", "")}.jpg`}
-                      alt="mark two headphones"
+                      alt="product"
                       className="w-[64px] h-[64px] object-cover rounded-lg"
                     />
                     <div className="flex flex-col">
