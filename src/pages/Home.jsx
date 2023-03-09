@@ -38,7 +38,7 @@ function Home() {
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </h2>
-        <Button1 text="See Product" onClick={() => navigate("/headphones/4")} />
+        <Button1 text="See Product" onClick={() => navigate("/product/4")} />
       </div>
       <Categories />
       <div className="w-full px-6 mb-6 pt-[120px]">
@@ -66,7 +66,7 @@ function Home() {
           <Button2
             bgColor={"bg-black"}
             textColor={"text-white"}
-            onClick={() => navigate("/speakers/6")}
+            onClick={() => navigate("/product/6")}
           />
         </div>
       </div>
@@ -81,7 +81,7 @@ function Home() {
           <Button2
             bgColor={"bg-transparent"}
             textColor={"text-black"}
-            onClick={() => navigate("/speakers/5")}
+            onClick={() => navigate("/product/5")}
           />
         </div>
       </div>
@@ -99,7 +99,7 @@ function Home() {
           <Button2
             bgColor={"bg-transparent"}
             textColor={"text-black"}
-            onClick={() => navigate("/earphones/1")}
+            onClick={() => navigate("/product/1")}
           />
         </div>
       </div>

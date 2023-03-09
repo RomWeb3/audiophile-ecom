@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CartModal from "../layouts/Modals/CartModal";
 import MenuModal from "../layouts/Modals/MenuModal";
 
-function Header() {
+function Header({ cart, setCart }) {
   const [showMenu, setShowMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
   const navigate = useNavigate();
@@ -47,7 +47,9 @@ function Header() {
         />
       </div>
       <AnimatePresence>
-        {showCart && <CartModal setShowCart={setShowCart} />}
+        {showCart && (
+          <CartModal setShowCart={setShowCart} cart={cart} setCart={setCart} />
+        )}
       </AnimatePresence>
       <AnimatePresence>
         {showMenu && <MenuModal setShowMenu={setShowMenu} />}

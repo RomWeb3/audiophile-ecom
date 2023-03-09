@@ -13,7 +13,7 @@ function Speakers({ products }) {
     .sort((a, b) => b.new - a.new);
 
   return (
-    <div>
+    <div className="relative">
       <Header />
       <CategoryHeader category="Speakers" />
       <div className="flex flex-col gap-[120px] mt-16">
@@ -25,7 +25,7 @@ function Speakers({ products }) {
             description={product.description}
             image={product.categoryImage.mobile}
             newProduct={product.new}
-            onClick={() => navigate(`/speakers/${product.id}`)}
+            onClick={() => navigate(`/product/${product.id}`)}
           />
         ))}
         <Categories />

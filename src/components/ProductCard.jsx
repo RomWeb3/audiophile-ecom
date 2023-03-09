@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button1 from "../layouts/buttons/Button1";
 import Counter from "../layouts/Form Elements/Counter";
 
-function ProductCard({ product }) {
-  const [quantity, setQuantity] = useState(1);
+function ProductCard({ product, cart, setCart }) {
   const navigate = useNavigate();
-
+  const [quantity, setQuantity] = useState(1);
   const price = product.price.toLocaleString("en-US", {
     style: "currency",
     currency: "USD",
   });
+
+  const handleAddToCart = (product) => {
+    const newCart = [...cart];
+    const item = newCart.find((item) => item.id === product.id);
+    if (item) {
+      item.quantity += quantity;
+    } else {
+      newCart.push({ ...product, quantity });
+    }
+    setCart(newCart);
+    setQuantity(1);
+  };
+
+  console.log(cart);
 
   return (
     <div className="w-full px-6 flex flex-col">
@@ -50,7 +63,7 @@ function ProductCard({ product }) {
       </p>
       <div className="flex items-center gap-4 mb-[88px]">
         <Counter count={quantity} setCount={setQuantity} />
-        <Button1 text="add to cart" onClick={() => {}} />
+        <Button1 text="add to cart" onClick={() => handleAddToCart(product)} />
       </div>
       <h4 className="font-bold text-2xl tracking-tightest uppercase text-black mb-6">
         Features
@@ -101,7 +114,10 @@ function ProductCard({ product }) {
             <h5 className="font-bold text-2xl text-center tracking-wide uppercase text-black">
               {item.name}
             </h5>
-            <Button1 text="See Product" onClick={() => {}} />
+            <Button1
+              text="See Product"
+              onClick={() => navigate({ pathname: `/product/${item.id}` })}
+            />
           </div>
         ))}
       </div>

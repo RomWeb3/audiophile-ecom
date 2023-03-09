@@ -26,7 +26,7 @@ function Headphones({ products }) {
             description={product.description}
             image={product.categoryImage.mobile}
             newProduct={product.new}
-            onClick={() => navigate(`/headphones/${product.id}`)}
+            onClick={() => navigate(`/product/${product.id}`)}
           />
         ))}
         <Categories />

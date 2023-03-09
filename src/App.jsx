@@ -11,6 +11,7 @@ import Checkout from "./pages/Checkout";
 
 function App() {
   const [products, setProducts] = useLocalStorage("products", []);
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
     const localData = localStorage.getItem("produts");
@@ -30,21 +31,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="headphones" element={<Headphones products={products} />} />
-        <Route
-          path="headphones/:id"
-          element={<ProductDetail products={products} />}
-        />
         <Route path="speakers" element={<Speakers products={products} />} />
-        <Route
-          path="speakers/:id"
-          element={<ProductDetail products={products} />}
-        />
-
         <Route path="earphones" element={<Earphones products={products} />} />
         <Route
-          path="earphones/:id"
-          element={<ProductDetail products={products} />}
+          path="product/:id"
+          element={
+            <ProductDetail products={products} cart={cart} setCart={setCart} />
+          }
         />
+
         <Route path="checkout" element={<Checkout products={products} />} />
       </Routes>
     </div>

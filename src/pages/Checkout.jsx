@@ -10,7 +10,7 @@ function Checkout() {
   const [selectedOption, setSelectedOption] = useState("");
 
   return (
-    <div>
+    <div className="relative">
       <Header />
       <div className="w-full h-full pt-6 px-6 bg-verylightgray">
         <p
