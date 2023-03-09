@@ -56,44 +56,50 @@ function CartModal({ setShowCart, cart, setCart }) {
               Remove all
             </button>
           </div>
-          <div className="overflow-auto mt-[7px]">
-            {cart.map((item) => (
-              <div key={item.id} className="mt-6 flex flex-col max-h-[240px]">
-                <div className="flex justify-between items-center">
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={`/assets/cart/image${item.image.mobile
-                        .replace("/assets/product", "")
-                        .replace("/mobile/image-product.jpg", "")}.jpg`}
-                      alt="mark two headphones"
-                      className="w-[64px] h-[64px] object-cover rounded-lg"
-                    />
-                    <div className="flex flex-col">
-                      <span className="font-bold text-base uppercase">
-                        {item.name
-                          .replace("Headphones", "")
-                          .replace("Speaker", "")
-                          .replace("Earphones", "")
-                          .replace("Wireless", "")
-                          .replace("Mark", "MK")}
-                      </span>
-                      <span className="font-medium text-base opacity-50 uppercase">
-                        {item.price.toLocaleString("en-US", {
-                          style: "currency",
-                          currency: "USD",
-                        })}
-                      </span>
+          {cart.length > 0 ? (
+            <div className="overflow-auto mt-[7px]">
+              {cart.map((item) => (
+                <div key={item.id} className="mt-6 flex flex-col max-h-[240px]">
+                  <div className="flex justify-between items-center">
+                    <div className="flex items-center gap-4">
+                      <img
+                        src={`/assets/cart/image${item.image.mobile
+                          .replace("/assets/product", "")
+                          .replace("/mobile/image-product.jpg", "")}.jpg`}
+                        alt="mark two headphones"
+                        className="w-[64px] h-[64px] object-cover rounded-lg"
+                      />
+                      <div className="flex flex-col">
+                        <span className="font-bold text-base uppercase">
+                          {item.name
+                            .replace("Headphones", "")
+                            .replace("Speaker", "")
+                            .replace("Earphones", "")
+                            .replace("Wireless", "")
+                            .replace("Mark", "MK")}
+                        </span>
+                        <span className="font-medium text-base opacity-50 uppercase">
+                          {item.price.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                          })}
+                        </span>
+                      </div>
                     </div>
+                    <Counter
+                      count={item.quantity}
+                      setCount={(value) => changeQuantity(item.id, value)}
+                      addCSS="w-[96px] h-8"
+                    />
                   </div>
-                  <Counter
-                    count={item.quantity}
-                    setCount={(value) => changeQuantity(item.id, value)}
-                    addCSS="w-[96px] h-8"
-                  />
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          ) : (
+            <div className="flex flex-col items-center justify-center h-full">
+              <p className="font-medium">There are no items in your bag.</p>
+            </div>
+          )}
           <div className="mt-auto">
             <div className="flex items-center justify-between mt-[31px] mb-6">
               <span className="font-medium text-base opacity-50 uppercase">

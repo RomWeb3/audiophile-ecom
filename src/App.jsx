@@ -29,17 +29,35 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="headphones" element={<Headphones products={products} />} />
-        <Route path="speakers" element={<Speakers products={products} />} />
-        <Route path="earphones" element={<Earphones products={products} />} />
+        <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
+        <Route
+          path="headphones"
+          element={
+            <Headphones products={products} cart={cart} setCart={setCart} />
+          }
+        />
+        <Route
+          path="speakers"
+          element={
+            <Speakers products={products} cart={cart} setCart={setCart} />
+          }
+        />
+        <Route
+          path="earphones"
+          element={
+            <Earphones products={products} cart={cart} setCart={setCart} />
+          }
+        />
         <Route
           path="product/:id"
           element={
             <ProductDetail products={products} cart={cart} setCart={setCart} />
           }
         />
-        <Route path="checkout" element={<Checkout cart={cart} />} />
+        <Route
+          path="checkout"
+          element={<Checkout cart={cart} setCart={setCart} />}
+        />
       </Routes>
     </div>
   );

@@ -6,7 +6,7 @@ import InputRadio from "../layouts/Form Elements/InputRadio";
 import Footer from "../components/Footer";
 import CheckoutModal from "../layouts/Modals/CheckoutModal";
 
-function Checkout({ cart }) {
+function Checkout({ cart, setCart }) {
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState("");
   const [purchased, setPurchased] = useState(false);
@@ -18,7 +18,7 @@ function Checkout({ cart }) {
   return (
     <div className="relative">
       {purchased && <CheckoutModal cart={cart} />}
-      <Header />
+      <Header cart={cart} setCart={setCart} />
       <div className="w-full h-full pt-6 px-6 bg-verylightgray">
         <p
           className="flex items-center gap-2 font-medium text-base text-black opacity-50 pt-4 pb-6"

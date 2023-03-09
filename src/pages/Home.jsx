@@ -7,7 +7,7 @@ import Categories from "../components/Categories";
 import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
 
-function Home() {
+function Home({ cart, setCart }) {
   const navigate = useNavigate();
 
   const style = (url, position) => {
@@ -21,7 +21,7 @@ function Home() {
 
   return (
     <div className="relative">
-      <Header />
+      <Header cart={cart} setCart={setCart} />
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
         style={style("/assets/home/mobile/image-header.jpg", "center 100%")}

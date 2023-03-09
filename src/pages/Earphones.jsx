@@ -6,7 +6,7 @@ import Categories from "../components/Categories";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 
-function Earphones({ products }) {
+function Earphones({ products, cart, setCart }) {
   const navigate = useNavigate();
   const filteredProducts = products
     .filter((product) => product.category === "earphones")
@@ -14,7 +14,7 @@ function Earphones({ products }) {
 
   return (
     <div className="relative">
-      <Header />
+      <Header cart={cart} setCart={setCart} />
       <CategoryHeader category="Speakers" />
       <div className="flex flex-col gap-[120px] mt-16">
         {filteredProducts.map((product) => (
