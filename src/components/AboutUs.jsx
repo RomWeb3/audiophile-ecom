@@ -2,7 +2,7 @@ function AboutUs() {
   return (
     <div
       className={`w-full max-w-[1110px] px-6 flex flex-col xl:flex-row-reverse items-center
-                  xl:justify-between xl:items-center`}
+                  xl:justify-between xl:items-center xl:px-0`}
     >
       <div
         className={`w-full max-w-[689px] xl:max-w-[550px] h-[300px] xl:h-[588px] rounded-lg mb-10 bg-cover bg-center bg-no-repeat] 
