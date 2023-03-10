@@ -27,9 +27,13 @@ function Header({ cart, setCart }) {
     }
   };
 
+  const totalQuantity = cart.reduce((acc, item) => {
+    return acc + item.quantity;
+  }, 0);
+
   return (
     <>
-      <div className="flex justify-between items-center py-[32px] px-6 bg-secondary border-b-[1px] border-separator">
+      <div className="w-full flex justify-between items-center py-[32px] px-6 bg-secondary border-b-[1px] border-separator">
         <img
           src="/assets/shared/tablet/icon-hamburger.svg"
           alt="icon-menu"
@@ -40,11 +44,18 @@ function Header({ cart, setCart }) {
           alt="logo"
           onClick={() => navigate("/")}
         />
-        <img
-          src="/assets/shared/desktop/icon-cart.svg"
-          alt="icon-cart"
-          onClick={() => switchModals("cart")}
-        />
+        <div className="relative">
+          <img
+            src="/assets/shared/desktop/icon-cart.svg"
+            alt="icon-cart"
+            onClick={() => switchModals("cart")}
+          />
+          {cart.length > 0 && (
+            <div className="absolute top-[-8px] right-[-8px] w-[16px] h-[16px] bg-primary rounded-full flex items-center justify-center text-white text-xs font-bold">
+              {totalQuantity}
+            </div>
+          )}
+        </div>
       </div>
       <AnimatePresence>
         {showCart && (

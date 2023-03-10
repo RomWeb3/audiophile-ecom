@@ -18,6 +18,8 @@ module.exports = {
     screens: {
       vsm: { max: "360px" },
 
+      ssm: "375px",
+
       sm: "550px",
       // => @media (min-width: 640px) { ... }
 

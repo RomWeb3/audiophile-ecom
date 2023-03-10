@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import Button1 from "../layouts/buttons/Button1";
@@ -20,19 +19,21 @@ function Home({ cart, setCart }) {
   };
 
   return (
-    <div className="relative">
+    <div className="flex flex-col items-center relative">
       <Header cart={cart} setCart={setCart} />
       <div
         className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
-        style={style("/assets/home/mobile/image-header.jpg", "center 100%")}
+        style={style("/assets/home/mobile/image-header.jpg", "center center")}
       >
         <p className="text-sm text-white opacity-50 tracking-widest uppercase text-center mb-4">
           New Product
         </p>
         <h1 className="text-5xl font-bold text-white tracking-tight uppercase text-center mb-6">
-          XX99 Mark II Headphones
+          <span>XX99 Mark II </span>
+          <br />
+          <span>Headphones</span>
         </h1>
-        <h2 className="text-base font-medium text-white opacity-75 text-center mb-7">
+        <h2 className="max-w-[349px] text-base font-medium text-white opacity-75 text-center mb-7">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </h2>
@@ -101,7 +102,7 @@ function Home({ cart, setCart }) {
           />
         </div>
       </div>
-      <div className="mb-[120px]">
+      <div className="w-full flex flex-col items-center mb-[120px]">
         <AboutUs />
       </div>
       <Footer />
