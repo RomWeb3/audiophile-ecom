@@ -88,8 +88,9 @@ function Header({ cart, setCart }) {
                 src="/assets/shared/desktop/logo.svg"
                 alt="logo"
                 onClick={() => navigate("/")}
+                className="cursor-pointer"
               />
-              <ul className="flex justify-center flex-row gap-[34px] ml-[-5%]">
+              <ul className="flex justify-center flex-row gap-[34px] ml-[-10%]">
                 <li className={listStyle} onClick={() => navigate("/")}>
                   Home
                 </li>
