@@ -5,7 +5,7 @@ function Categories() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full max-w-[1190px] pt-[50px] px-6 flex flex-col gap-[68px] md:flex-row md:gap-[10px] md:pt-[96px] md:px-10">
+    <div className="w-full max-w-[1190px] pt-[92px] px-6 flex flex-col gap-[68px] md:flex-row md:gap-[10px] md:pt-[96px] md:px-10 lg:gap-[30px]">
       <div
         className="w-full h-[165px] bg-lightgray rounded-lg flex flex-col items-center relative"
         onClick={() => navigate("/headphones")}
