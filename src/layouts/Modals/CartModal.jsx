@@ -77,7 +77,7 @@ function CartModal({ setShowCart, cart, setCart }) {
                           className="w-[64px] h-[64px] object-cover rounded-lg"
                         />
                         <div className="flex flex-col">
-                          <span className="font-bold text-base uppercase">
+                          <span className="font-bold text-base uppercase vsm:max-w-[50px]">
                             {item.name
                               .replace("Headphones", "")
                               .replace("Speaker", "")
