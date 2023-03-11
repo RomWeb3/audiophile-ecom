@@ -17,27 +17,15 @@ module.exports = {
     },
     screens: {
       vsm: { max: "360px" },
-
       ssm: "375px",
-
       smd: "440px",
-
       sm: "550px",
-      // => @media (min-width: 640px) { ... }
-
       md: "768px",
-      // => @media (min-width: 768px) { ... }
-
       lg: "1024px",
-      // => @media (min-width: 1024px) { ... }
-
       llg: "1110px",
-
+      sxl: "1190px",
       xl: "1280px",
-      // => @media (min-width: 1280px) { ... }
-
       "2xl": "1536px",
-      // => @media (min-width: 1536px) { ... }
     },
     fontSize: {
       xs: ["13px", "25px"],

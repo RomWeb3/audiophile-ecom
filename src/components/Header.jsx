@@ -48,7 +48,7 @@ function Header({ cart, setCart }) {
       <div className="w-full bg-secondary flex justify-center">
         <div
           className={`w-full max-w-[1110px] flex justify-between items-center py-[32px] px-6 
-                      border-b-[1px] border-primary md:px-10  llg:px-0`}
+                      border-b-[1px] border-primary md:px-10 llg:px-0`}
         >
           {screenWidth < 1024 ? (
             <>
@@ -88,7 +88,7 @@ function Header({ cart, setCart }) {
                 src="/assets/shared/desktop/logo.svg"
                 alt="logo"
                 onClick={() => navigate("/")}
-                className="cursor-pointer"
+                className="cursor-pointer llg:pl-10 sxl:pl-0"
               />
               <ul className="flex justify-center flex-row gap-[34px] ml-[-10%]">
                 <li className={listStyle} onClick={() => navigate("/")}>
@@ -117,12 +117,12 @@ function Header({ cart, setCart }) {
               src="/assets/shared/desktop/icon-cart.svg"
               alt="icon-cart"
               onClick={() => switchModals("cart")}
-              className="cursor-pointer"
+              className="cursor-pointer llg:pr-10 sxl:pr-0"
             />
             {cart.length > 0 && (
               <div
                 className={`absolute top-[-8px] right-[-8px] w-[16px] h-[16px] bg-primary rounded-full 
-                            flex items-center justify-center text-white text-xs font-bold`}
+                            flex items-center justify-center text-white text-xs font-bold llg:right-[32px] sxl:right-[-8px]`}
               >
                 {totalQuantity}
               </div>
