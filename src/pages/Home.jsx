@@ -3,37 +3,30 @@ import Header from "../components/Header";
 import Button1 from "../layouts/buttons/Button1";
 import Button2 from "../layouts/buttons/Button2";
 import Categories from "../components/Categories";
-import Footer from "../components/Footer";
 import AboutUs from "../components/AboutUs";
+import Footer from "../components/Footer";
 
 function Home({ cart, setCart }) {
   const navigate = useNavigate();
-
-  const style = (url, position) => {
-    return {
-      backgroundImage: `url('${url}')`,
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-      backgroundPosition: position,
-    };
-  };
 
   return (
     <div className="flex flex-col items-center relative">
       <Header cart={cart} setCart={setCart} />
       <div
-        className="w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10"
-        style={style("/assets/home/mobile/image-header.jpg", "center center")}
+        className={`w-full h-[510px] px-6 flex flex-col justify-center items-center mb-10 md:h-[639px]
+                    bg-no-repeat bg-[length:375px_600px] bg-[center_-90px] bg-[#1A1A1A]
+                    bg-[url('/assets/home/mobile/image-header.jpg')]
+                    md:bg-[url('/assets/home/tablet/image-header.jpg')] md:bg-[length:770px_728px]`}
       >
-        <p className="text-sm text-white opacity-50 tracking-widest uppercase text-center mb-4">
+        <p className="text-sm text-white opacity-50 tracking-widest uppercase text-center mb-4 md:mb-6">
           New Product
         </p>
-        <h1 className="text-5xl font-bold text-white tracking-tight uppercase text-center mb-6">
+        <h1 className="text-5xl font-bold text-white tracking-tight uppercase text-center mb-6 md:text-7xl">
           <span>XX99 Mark II </span>
           <br />
           <span>Headphones</span>
         </h1>
-        <h2 className="max-w-[349px] text-base font-medium text-white opacity-75 text-center mb-7">
+        <h2 className="max-w-[349px] text-base font-medium text-white opacity-75 text-center mb-7 md:mb-10">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
         </h2>
