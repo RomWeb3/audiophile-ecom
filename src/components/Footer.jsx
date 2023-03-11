@@ -9,8 +9,8 @@ function Footer() {
   return (
     <div className="w-full bg-secondary flex justify-center">
       <div
-        className={`w-full max-w-[1440px] px-6 pt-[52px] pb-[38px] flex flex-col justify-center items-center gap-12 relative
-                  sm:px-10 sm:py-[46px] sm:items-start lg:px-[165px] lg:py-[48px]`}
+        className={`w-full max-w-[1190px] px-6 pt-[52px] pb-[38px] flex flex-col justify-center items-center gap-12 relative
+                  sm:px-10 sm:py-[46px] sm:items-start lg:py-[48px]`}
       >
         <div className="w-[101px] h-1 bg-primary absolute top-0"></div>
         <div

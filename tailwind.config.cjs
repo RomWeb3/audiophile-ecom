@@ -20,6 +20,8 @@ module.exports = {
 
       ssm: "375px",
 
+      smd: "440px",
+
       sm: "550px",
       // => @media (min-width: 640px) { ... }
 

@@ -1,7 +1,7 @@
 function AboutUs() {
   return (
     <div
-      className={`w-full max-w-[1110px] px-6 flex flex-col xl:flex-row-reverse items-center
+      className={`w-full max-w-[1110px] px-6 md:px-10 flex flex-col xl:flex-row-reverse items-center
                   xl:justify-between xl:items-center xl:px-0`}
     >
       <div
