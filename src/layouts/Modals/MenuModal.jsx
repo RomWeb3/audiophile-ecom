@@ -24,11 +24,11 @@ function MenuModal({ setShowMenu }) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="w-full h-[calc(100%-90px)] absolute bg-black/40 flex flex-col items-center z-50"
+      className="w-full h-[calc(100%-90px)] absolute bg-black/40 flex flex-col items-center z-50 mt-[90px]"
       onClick={closeModal}
     >
-      <div className="w-full py-8 bg-white">
-        <Categories />
+      <div className="w-full flex justify-center py-8 md:py-0 md:pb-[67px] md:pt-[-30px] bg-white rounded-b-lg">
+        <Categories paddingTop="pt-[108px]" />
       </div>
     </motion.div>
   );

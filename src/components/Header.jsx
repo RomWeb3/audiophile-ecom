@@ -142,7 +142,6 @@ function Header({ cart, setCart }) {
           {showMenu && <MenuModal setShowMenu={setShowMenu} />}
         </AnimatePresence>
       </div>
-      {/* <div className="w-full max-w-[1190px] h-[1px] md:px-10 bg-white/100"></div> */}
     </>
   );
 }

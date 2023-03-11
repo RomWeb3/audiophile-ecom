@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import Button3 from "../layouts/buttons/Button3";
 
-function Categories() {
+function Categories({ paddingTop }) {
   const navigate = useNavigate();
 
   const divStyle =
@@ -11,8 +11,8 @@ function Categories() {
 
   return (
     <div
-      className="w-full max-w-[1190px] pt-[92px] px-6 flex flex-col gap-[68px] 
-                 md:flex-row md:gap-[10px] md:pt-[148px] md:px-10 lg:gap-[30px] lg:pt-[180px]"
+      className={`w-full max-w-[1190px] pt-[92px] px-6 flex flex-col gap-[68px] 
+                 md:flex-row md:gap-[10px] md:${paddingTop} md:px-10 lg:gap-[30px] lg:pt-[180px]`}
     >
       <div className={divStyle} onClick={() => navigate("/headphones")}>
         <img

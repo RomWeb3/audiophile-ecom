@@ -37,7 +37,7 @@ function Home({ cart, setCart }) {
         </div>
       </div>
       <div className="flex flex-col items-center">
-        <Categories />
+        <Categories paddingTop="pt-[148px]" />
         <div className="w-full max-w-[1190px] px-6 mb-6 pt-[120px] md:px-10 md:mb-8 lg:mb-12 md:pt-[96px]">
           <div
             className={`w-full bg-primary flex flex-col items-center px-6 rounded-lg relative overflow-hidden
