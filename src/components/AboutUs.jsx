@@ -8,7 +8,7 @@ function AboutUs() {
         className={`w-full max-w-[689px] xl:max-w-[550px] h-[300px] xl:h-[588px] rounded-lg mb-10 bg-cover bg-center bg-no-repeat] 
                     bg-[url('/assets/shared/mobile/image-best-gear.jpg')] 
                     ssm:bg-[url('/assets/shared/tablet/image-best-gear.jpg')]
-                    xl:bg-[url('/assets/shared/desktop/image-best-gear.jpg')]`}
+                    xl:bg-[url('/assets/shared/desktop/image-best-gear.jpg')] xl:mb-0`}
       ></div>
       <div className="flex flex-col">
         <h3

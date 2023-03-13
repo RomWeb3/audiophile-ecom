@@ -21,7 +21,7 @@ function ProductDetail({ products, cart, setCart, screenWidth }) {
         setCart={setCart}
         screenWidth={screenWidth}
       />
-      <div className="flex flex-col gap-[120px] mt-[80px] items-center">
+      <div className="flex flex-col gap-[120px] mt-[80px] items-center lg:mt-10 lg:gap-[160px]">
         <Categories />
         <AboutUs />
         <Footer />
