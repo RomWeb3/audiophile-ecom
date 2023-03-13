@@ -6,7 +6,7 @@ import Categories from "../components/Categories";
 import AboutUs from "../components/AboutUs";
 import Footer from "../components/Footer";
 
-function Earphones({ products, cart, setCart }) {
+function Earphones({ products, cart, setCart, screenWidth }) {
   const navigate = useNavigate();
   const filteredProducts = products
     .filter((product) => product.category === "earphones")
@@ -23,14 +23,21 @@ function Earphones({ products, cart, setCart }) {
             title={product.name.replace("Earphones", "")}
             category={product.category}
             description={product.description}
-            image={product.categoryImage.mobile}
+            image={
+              screenWidth < 1024
+                ? product.categoryImage.mobile
+                : product.categoryImage.desktop
+            }
+            backgroundSize={screenWidth < 1024 ? "327px 352px" : "540px 560px"}
             newProduct={product.new}
             onClick={() => navigate(`/product/${product.id}`)}
           />
         ))}
-        <Categories />
-        <AboutUs />
-        <Footer />
+        <div className="flex flex-col items-center gap-[120px] mt-[-40px] lg:gap-[160px] lg:mt-[-80px]">
+          <Categories />
+          <AboutUs />
+          <Footer />
+        </div>
       </div>
     </div>
   );

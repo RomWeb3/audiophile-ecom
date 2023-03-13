@@ -12,6 +12,7 @@ import Checkout from "./pages/Checkout";
 function App() {
   const [products, setProducts] = useLocalStorage("products", []);
   const [cart, setCart] = useState([]);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const localData = localStorage.getItem("produts");
@@ -26,6 +27,14 @@ function App() {
 
   console.log(products);
 
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <Routes>
@@ -33,19 +42,34 @@ function App() {
         <Route
           path="headphones"
           element={
-            <Headphones products={products} cart={cart} setCart={setCart} />
+            <Headphones
+              products={products}
+              cart={cart}
+              setCart={setCart}
+              screenWidth={screenWidth}
+            />
           }
         />
         <Route
           path="speakers"
           element={
-            <Speakers products={products} cart={cart} setCart={setCart} />
+            <Speakers
+              products={products}
+              cart={cart}
+              setCart={setCart}
+              screenWidth={screenWidth}
+            />
           }
         />
         <Route
           path="earphones"
           element={
-            <Earphones products={products} cart={cart} setCart={setCart} />
+            <Earphones
+              products={products}
+              cart={cart}
+              setCart={setCart}
+              screenWidth={screenWidth}
+            />
           }
         />
         <Route
