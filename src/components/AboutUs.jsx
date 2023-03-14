@@ -13,7 +13,7 @@ function AboutUs() {
       <div className="flex flex-col">
         <h3
           className={`max-w-[573px] text-3xl font-bold text-black tracking-tightest text-center uppercase mb-8
-                      lg:max-w-[400px] lg:text-6lg lg:text-left lg:tracking-normal`}
+                      lg:max-w-[400px] lg:text-6xl lg:text-left lg:tracking-normal`}
         >
           Bringing you the <span className="text-primary">best</span> audio gear
         </h3>
