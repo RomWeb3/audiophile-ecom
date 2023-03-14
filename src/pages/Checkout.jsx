@@ -223,7 +223,7 @@ function Checkout({ cart, setCart }) {
               )}
             </div>
 
-            <div className="w-full h-full bg-white rounded-lg px-6 py-8 xl:max-w-[350px] xl:px-8">
+            <div className="w-full h-full bg-white rounded-lg px-6 py-8 md:py-[30px] md:px-[27.5px] xl:max-w-[350px] xl:px-8">
               <h2 className="font-bold text-lg tracking-tight uppercase text-black mb-[7px]">
                 Summary
               </h2>
