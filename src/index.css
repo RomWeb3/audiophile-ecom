@@ -27,6 +27,7 @@ button {
   outline: none;
   text-transform: inherit;
   cursor: pointer;
+  user-select: none;
 }
 
 body {
