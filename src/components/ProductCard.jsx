@@ -105,37 +105,45 @@ function ProductCard({ product, cart, setCart, screenWidth }) {
             </div>
           </div>
         </div>
-        <div className="w-full flex flex-col gap-[20px] mt-[88px] md:flex-row md:mt-[120px]">
-          <div className="w-full flex flex-col gap-[20px]">
+        <div className="w-full flex flex-col gap-[20px] mt-[88px] md:flex-row md:mt-[120px] lg:gap-[30px]">
+          <div className="w-full flex flex-col gap-[20px] lg:gap-8">
             <img
               src={
                 screenWidth < 768
                   ? product.gallery.first.mobile
-                  : product.gallery.first.tablet
+                  : screenWidth < 1024
+                  ? product.gallery.first.tablet
+                  : product.gallery.first.desktop
               }
               alt="image gallery"
-              className="rounded-lg md:h-[174px]"
+              className="rounded-lg md:h-[174px] lg:h-[280px] object-cover"
             />
+
             <img
               src={
                 screenWidth < 768
                   ? product.gallery.second.mobile
-                  : product.gallery.second.tablet
+                  : screenWidth < 1024
+                  ? product.gallery.second.tablet
+                  : product.gallery.second.desktop
               }
               alt="image gallery"
-              className="rounded-lg md:h-[174px]"
+              className="rounded-lg md:h-[174px] lg:h-[280px] object-cover"
             />
           </div>
           <img
             src={
               screenWidth < 768
                 ? product.gallery.third.mobile
-                : product.gallery.third.tablet
+                : screenWidth < 1024
+                ? product.gallery.third.tablet
+                : product.gallery.third.desktop
             }
             alt="image gallery"
-            className="rounded-lg md:max-w-[56%] md:h-[368px]"
+            className="rounded-lg md:h-[368px] lg:h-[592px]"
           />
         </div>
+
         <div className="w-full mt-[120px] lg:mt-[160px]">
           <h5 className="font-bold text-black text-2xl tracking-tightest uppercase text-center mb-[-16px] md:text-4xl">
             You may also like
