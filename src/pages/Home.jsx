@@ -118,7 +118,7 @@ function Home({ cart, setCart }) {
           </div>
         </div>
       </div>
-      <div className="w-full flex flex-col items-center mb-[120px]">
+      <div className="w-full flex flex-col items-center mb-[120px] md:mb-[96px] lg:mb-[120px] lg:mt-[24px]">
         <AboutUs />
       </div>
       <Footer />
