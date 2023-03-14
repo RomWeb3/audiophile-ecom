@@ -12,7 +12,7 @@ function Home({ cart, setCart }) {
   return (
     <div className="relative">
       <Header cart={cart} setCart={setCart} />
-      <div className="w-full bg-[#1A1A1A] flex justify-center">
+      <div className="w-full bg-[#191919] flex justify-center">
         <div
           className={`w-full max-w-[1190px] h-[510px] px-6 flex flex-col justify-center items-center md:h-[639px]
                     bg-no-repeat bg-[length:375px_600px] bg-[center_-90px] 
