@@ -54,7 +54,7 @@ function CartModal({ setShowCart, cart, setCart }) {
                 Cart ({cart.length})
               </span>
               <button
-                className="font-medium text-base underline opacity-50"
+                className="font-medium text-base underline opacity-50 hover:text-primary transition-all hover:opacity-100"
                 onClick={() => setCart([])}
               >
                 Remove all
@@ -120,7 +120,8 @@ function CartModal({ setShowCart, cart, setCart }) {
                 </span>
               </div>
               <button
-                className="w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase text-white"
+                className={`w-full h-12 bg-primary font-bold text-xs text-center tracking-tightest uppercase
+                           text-white hover:bg-[#FBAF85] transition-all`}
                 onClick={() => {
                   cart.length > 0 && navigate("/checkout");
                 }}
