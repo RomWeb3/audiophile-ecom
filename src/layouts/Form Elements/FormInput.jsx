@@ -28,7 +28,7 @@ function FormInput({
         id={id}
         value={value}
         onChange={onChange}
-        className={`w-full h-[56px] border border-[#CFCFCF] rounded-lg px-6 mb-6 mt-[9px] opacity-100 ${opacity}
+        className={`w-full h-[56px] border border-[#CFCFCF] rounded-lg px-6 mb-6 mt-[9px] ${opacity}
         text-sm tracking-[-0.25px] font-bold placeholder:font-bold placeholder:text-sm caret-primary
         placeholder:tracking-[-0.25px] placeholder:opacity-40 focus:border-primary focus:outline-none`}
         style={{ borderColor: error && btnClicked ? "#CD2C2C" : "#CFCFCF" }}

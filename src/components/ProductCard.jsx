@@ -35,9 +35,12 @@ function ProductCard({ product, cart, setCart, screenWidth }) {
           <img
             src="/assets/shared/desktop/icon-arrow-right.svg"
             alt="icon arrow"
+            className="cursor-pointer"
             style={{ transform: "rotate(180deg)" }}
           />
-          Go Back
+          <span className="cursor-pointer hover:text-primary transition-all">
+            Go Back
+          </span>
         </p>
       </div>
       <div className="w-full flex flex-col max-w-[1110px]">

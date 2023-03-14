@@ -121,7 +121,7 @@ function Header({ cart, setCart }) {
             />
             {cart.length > 0 && (
               <div
-                className={`absolute top-[-8px] right-[-8px] w-[16px] h-[16px] bg-primary rounded-full 
+                className={`absolute top-[-8px] right-[-8px] w-[17px] h-[17px] bg-primary rounded-full pr-[1px] 
                             flex items-center justify-center text-white text-xs font-bold llg:right-[32px] sxl:right-[-8px]`}
               >
                 {totalQuantity}

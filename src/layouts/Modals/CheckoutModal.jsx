@@ -19,7 +19,7 @@ function CheckoutModal({ cart, setCart }) {
       exit={{ opacity: 0 }}
       className="w-full h-full fixed bg-black/40 flex flex-col justify-center items-center z-50"
     >
-      <div className="p-8 w-[87%] max-w-[540px] bg-white rounded-lg flex flex-col gap-8 md:p-12 overflow-scroll">
+      <div className="p-8 w-[87%] max-w-[540px] bg-white rounded-lg flex flex-col gap-8 md:p-12 overflow-y-auto">
         <div>
           <img
             src="/assets/checkout/icon-order-confirmation.svg"

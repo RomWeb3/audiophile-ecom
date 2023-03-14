@@ -61,7 +61,21 @@ function CartModal({ setShowCart, cart, setCart }) {
               </button>
             </div>
             {cart.length > 0 ? (
-              <div className="overflow-auto mt-[7px]">
+              <div className=" modal overflow-auto mt-[7px]">
+                <style>
+                  {`
+                  .modal::-webkit-scrollbar {
+                    width: 4px;
+                    height: 100%;
+                    background: #FAFAFA;
+                    margin-left: 24px;
+                  }
+
+                  .modal::-webkit-scrollbar-thumb {
+                    background-color: #f1f1f1;
+                  }
+                `}
+                </style>
                 {cart.map((item) => (
                   <div
                     key={item.id}
