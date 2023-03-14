@@ -1,7 +1,8 @@
 function InputRadio({ method, checked, onChange }) {
   return (
     <div
-      className="w-full h-[56px] border border-[#CFCFCF] rounded-lg px-4 flex items-center gap-4 focus:border-primary focus:outline-none"
+      className={`w-full h-[56px] border border-[#CFCFCF] rounded-lg px-4 flex items-center gap-4
+                 focus:border-primary focus:outline-none md:w-[48.9%]`}
       style={{ borderColor: checked ? "#D87D4A" : "#CFCFCF" }}
     >
       <input
