@@ -15,7 +15,7 @@ function Earphones({ products, cart, setCart, screenWidth }) {
   return (
     <div className="relative">
       <Header cart={cart} setCart={setCart} />
-      <CategoryHeader category="Speakers" />
+      <CategoryHeader category="Earphones" />
       <div className="flex flex-col gap-[120px] mt-16">
         {filteredProducts.map((product) => (
           <CategoryCard

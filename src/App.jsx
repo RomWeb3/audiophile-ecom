@@ -8,6 +8,7 @@ import Speakers from "./pages/Speakers";
 import Earphones from "./pages/Earphones";
 import ProductDetail from "./pages/ProductDetail";
 import Checkout from "./pages/Checkout";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const [products, setProducts] = useLocalStorage("products", []);
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <div>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home cart={cart} setCart={setCart} />} />
         <Route
