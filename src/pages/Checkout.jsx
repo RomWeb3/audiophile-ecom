@@ -104,8 +104,11 @@ function Checkout({ cart, setCart }) {
               src="/assets/shared/desktop/icon-arrow-right.svg"
               alt="icon arrow"
               style={{ transform: "rotate(180deg)" }}
+              className="cursor-pointer"
             />
-            Go Back
+            <span className="cursor-pointer hover:text-primary transition-all">
+              Go Back
+            </span>
           </p>
 
           <div className="w-full flex flex-col gap-[30px] xl:flex-row mb-[97px] md:mb-[116px] xl:mb-[141px]">
