@@ -94,7 +94,7 @@ function Checkout({ cart, setCart }) {
     <div className="relative">
       {purchased && <CheckoutModal cart={cart} setCart={setCart} />}
       <Header cart={cart} setCart={setCart} />
-      <div className="w-full h-full flex flex-col items-center pt-6 px-6 bg-verylightgray lg:px-10">
+      <div className="w-full h-full flex flex-col items-center pt-6 px-6 bg-lightgray lg:px-10">
         <div className="w-full max-w-[1110px]">
           <p
             className="flex items-center gap-2 font-medium text-base text-black opacity-50 pt-4 pb-6"
